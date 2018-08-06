@@ -13,10 +13,12 @@ let { Click } = require("./models/click");
 let app = express();
 const PORT = process.env.PORT || 3000;
 
+  app.use(cors())
+
 //configure middleware
 app.use(bodyParser.json()); //can now send JSON to express application
 
-app.use(cors)
+
 
 //allow cross-origin access
 // app.all('/', function(req, res, next) {
