@@ -13,19 +13,17 @@ let { Click } = require("./models/click");
 let app = express();
 const PORT = process.env.PORT || 3000;
 
-//allow cross-origin access
-app.all('/', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next();
- });
-
 //configure middleware
 app.use(bodyParser.json()); //can now send JSON to express application
 
 app.use(cors)
 
-
+//allow cross-origin access
+// app.all('/', function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//   next();
+//  });
 
 //configure routes here
 app.post("/clicks", (request, response) => {
