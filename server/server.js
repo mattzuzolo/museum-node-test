@@ -29,6 +29,8 @@ app.use(bodyParser.json()); //can now send JSON to express application
 
 //configure routes here
 app.post("/clicks", (request, response) => {
+  console.log("request.body.xLocation", request.body.xLocation)
+  console.log("request.body.yLocation", request.body.yLocation)
   let click = new Click({
     xLocation: request.body.xLocation,
     yLocation: request.body.yLocation
