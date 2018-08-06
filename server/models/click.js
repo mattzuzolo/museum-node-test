@@ -5,12 +5,12 @@ let Click = mongoose.model("Click", {
   xLocation: {
     type: Number,
     required: true,
-    default: -1
+    // default: -1
   },
   yLocation: {
     type: Number,
     required: true,
-    default: -1
+    // default: -1
   }
 });
 
