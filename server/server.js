@@ -26,7 +26,7 @@ app.all('/', function(req, res, next) {
 app.post("/clicks", (request, response) => {
   let click = new Click({
     xLocation: request.body.xLocation,
-    yLocation: request.body.yLocation,
+    yLocation: request.body.yLocation
   })
 
   click.save().then((doc) => {
@@ -36,6 +36,8 @@ app.post("/clicks", (request, response) => {
   });
 });
 
+
+//GET
 app.get("/clicks", (request, response) => {
   Click.find().then((clicks) => {
     response.send({clicks});
